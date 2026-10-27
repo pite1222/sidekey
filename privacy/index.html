@@ -25,7 +25,7 @@
 <thead><tr><th>情報</th><th>目的</th><th>保存場所と期間</th></tr></thead>
 <tbody>
 <tr><td>設定（キーの位置・高さ・幅・振動のオン／オフ）</td><td>設定の保持</td><td>端末内。アプリを削除するまで</td></tr>
-<tr><td>クリップボード履歴（最大 50 件・1 件 5,000 文字まで）</td><td>履歴からの貼り付け</td><td>端末内。<strong>暗号化せずに保存します</strong>。「すべて消す」または個別の削除で消せます。アプリを削除すると消えます</td></tr>
+<tr><td>クリップボード履歴（最大 50 件・1 件 5,000 文字まで）</td><td>履歴からの貼り付け</td><td>端末内。<strong>暗号化せずに保存します</strong>。「すべて消す」または個別の削除（キーボードでは ✗）で消せます。ピン留めした項目は 50 件を超えても残ります。アプリを削除すると消えます</td></tr>
 <tr><td>変換の学習データ</td><td>入力した言葉を次回の変換に生かす</td><td>端末内。アプリを削除すると消えます</td></tr>
 <tr><td>購入の状態（無料体験の開始日・購入済みか）</td><td>無料体験・購入の判定</td><td>端末内。購入そのものの情報は Apple が管理します</td></tr>
 </tbody></table>
@@ -34,7 +34,7 @@
 <p>キーボードの設定で「フルアクセスを許可」をオンにすると、アプリとキーボードの間で履歴・設定・購入状態を共有できます。フルアクセスをオンにしても、入力内容を外部に送信することはありません。オフのままでも日本語入力と変換は使えます（クリップボード履歴、アプリで変えた設定、購入状態の反映は使えません）。</p>
 
 <h2>4. クリップボードの読み取り</h2>
-<p>クリップボードの文字は、キーボードの「取り込む」を押したときにだけ、履歴へ読み込みます。キーボードを開いている間は、クリップボードに新しい文字があるかどうかだけを確認し、内容は読みません。iOS が「ペーストを許可」の確認を出す場合があります。iOS の設定で「他の App からペースト」を「許可」にすると確認が出なくなります。その場合、コピーしたパスワードなども取り込めてしまうため、ご注意ください。</p>
+<p>フルアクセスをオンにすると、キーボードを開いたとき（開いている間も含む）に、前回から新しいコピーがあれば、その文字を自動で履歴へ読み込みます。新しいコピーが無いときは内容を読みません。アプリの設定「コピーしたら自動で取り込む」をオフにすると、キーボードの「取り込む」を押したときだけ読み込みます。パスワード管理アプリなどが「秘密」の印（org.nspasteboard の ConcealedType など）を付けたコピーは、自動では取り込みません。iOS が「ペーストを許可」の確認を出す場合があります。iOS の設定で「他の App からペースト」を「許可」にすると確認が出なくなります。その場合、印の無いパスワードなども確認なしで取り込まれるため、ご注意ください。読み込んだ文字は端末の外に送信しません。</p>
 
 <h2>5. 第三者への提供</h2>
 <p>情報を第三者に提供・共有・販売しません。本アプリに組み込んだオープンソースのライブラリ（AzooKeyKanaKanjiConverter など）は端末の中で動作し、情報を送信しません。</p>
@@ -66,14 +66,14 @@
 <h2>Data kept on your device</h2>
 <ul>
 <li><strong>Settings</strong> (key position, height, width, haptics): kept until you delete the app.</li>
-<li><strong>Clipboard history</strong> (up to 50 items, 5,000 characters each): stored on-device in the app/keyboard shared container, <strong>unencrypted</strong>. Delete items one by one or use "Clear all"; deleting the app removes it.</li>
+<li><strong>Clipboard history</strong> (up to 50 items, 5,000 characters each): stored on-device in the app/keyboard shared container, <strong>unencrypted</strong>. Delete items one by one (✗ in the keyboard) or use "Clear all"; pinned items are kept beyond 50; deleting the app removes it.</li>
 <li><strong>Conversion learning data</strong>: stored on-device, removed with the app.</li>
 <li><strong>Purchase state</strong> (trial start date, unlocked or not): stored on-device. Payment details are handled by Apple.</li>
 </ul>
 <h2>Full Access</h2>
 <p>With Full Access on, the app and keyboard share history, settings and purchase state. Nothing you type is transmitted. Without it, typing and conversion still work, but clipboard history, settings changed in the app, and purchase state are not available.</p>
 <h2>Clipboard access</h2>
-<p>The keyboard reads clipboard text into history only when you tap "Import". While the keyboard is open it only checks whether new text exists, not what it is. If you set iOS "Paste from Other Apps" to "Allow", the prompt disappears and copied passwords can be imported too, so be careful.</p>
+<p>With Full Access on, when the keyboard opens (and while it stays open) it reads new clipboard text into history automatically, only if something was copied since it last looked; otherwise it does not read the contents. Turn off "Import copies automatically" in the app to import only when you tap "Import". Copies that password managers mark as private (org.nspasteboard ConcealedType and similar) are not imported automatically. iOS may ask "Allow Paste"; setting "Paste from Other Apps" to "Allow" removes the prompt, and then unmarked passwords are imported without asking too, so be careful. Nothing read is sent off your device.</p>
 <h2>Third parties and purchases</h2>
 <p>We do not share or sell information. Bundled open-source libraries (e.g. AzooKeyKanaKanjiConverter) run on-device and send nothing. The free trial and the 490 JPY one-time purchase are processed by Apple (StoreKit).</p>
 <h2>Deletion and children</h2>
